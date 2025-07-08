@@ -85,36 +85,40 @@
 
 
 
-
+// LaptopModel.js
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
-
+// ✅ ใช้ลิงก์เต็มจาก Vercel Blob
 const modelUrl = 'https://sdpjneouogwaatdu.public.blob.vercel-storage.com/laptop_low_poly-Q2FMdYHGhigTV3HkNPCe7bMIT47TQE.glb';
 
+// ✅ ฟังก์ชันคอมโพเนนต์โมเดล
 export function LaptopModel({ scrollPosition, ...props }) {
   const modelRef = useRef();
-  // แก้ path ไปยังไฟล์โมเดล laptop ของคุณ
+
+  // โหลดโมเดล .glb จาก URL
   const { scene } = useGLTF(modelUrl);
 
+  // หมุนโมเดลตาม scroll
   useFrame(() => {
     if (modelRef.current) {
-      // ทำให้โมเดลหมุนตามการ scroll (หมุนไปทางตรงข้าม)
-      modelRef.current.rotation.y = -scrollPosition / 400; // เปลี่ยนเป็นลบ
-      // ทำให้โมเดลเอียงเล็กน้อยตอน scroll
+      modelRef.current.rotation.y = -scrollPosition / 400;
       modelRef.current.rotation.x = scrollPosition / 400;
     }
   });
 
- return (
+  return (
     <primitive
       ref={modelRef}
       object={scene}
-      scale={9} 
-      rotation={[0, 0, 0]} // ไม่หมุนเลย ให้หันหน้าจอมาก่อน
+      scale={9}
+      rotation={[0, 0, 0]}
       position={[0, -1.2, 0]}
       {...props}
     />
   );
 }
+
+// ✅ preload (optional)
+useGLTF.preload(modelUrl);
