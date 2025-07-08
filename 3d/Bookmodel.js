@@ -36,6 +36,7 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
+// ตัวอย่างใน Bookmodel.js
 const modelUrl = 'https://sdpjneouogwaatdu.public.blob.vercel-storage.com/graduation_hat-Fm1eCYJxxjX6SvlGPsyu8IatOzU258.glb';
 
 export function BookModel({ scrollPosition, ...props }) {
