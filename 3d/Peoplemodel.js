@@ -3,9 +3,11 @@ import React, { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
+const modelurl ="https://sdpjneouogwaatdu.public.blob.vercel-storage.com/low_poly_man_working_at_a_table_with_a_laptop-aqni0dhjc7JqV9fNbzlIzer6TLGmPO.glb"
 export function PeopleModel(props) {
   const group = useRef();
-  const { scene, animations } = useGLTF('/low_poly_man_working_at_a_table_with_a_laptop.glb'); 
+  // const { scene, animations } = useGLTF('/low_poly_man_working_at_a_table_with_a_laptop.glb'); 
+  const { scene, animations } = useGLTF(modelurl); 
   const { actions } = useAnimations(animations, group);
 
   // เล่น animation
@@ -54,4 +56,5 @@ export function PeopleModel(props) {
 }
 
 // Preload the model
-useGLTF.preload('/low_poly_man_working_at_a_table_with_a_laptop.glb');
+// useGLTF.preload('/low_poly_man_working_at_a_table_with_a_laptop.glb');
+useGLTF.preload(modelurl);

@@ -2,8 +2,11 @@
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
 
+
+const modelUrl = 'https://sdpjneouogwaatdu.public.blob.vercel-storage.com/hard_cover_books-UybVFA88k1pj2c1kDq7jryp9bGMKgq.glb';
 export function LearnModel(props) {
-  const { scene } = useGLTF('/hard_cover_books.glb');
+  // const { scene } = useGLTF('/hard_cover_books.glb');
+  const { scene } = useGLTF(modelUrl);
   
   return (
     <group {...props} dispose={null}>
@@ -12,4 +15,6 @@ export function LearnModel(props) {
   );
 }
 
-useGLTF.preload('/hard_cover_books.glb');
+useGLTF.preload(modelUrl);
+
+

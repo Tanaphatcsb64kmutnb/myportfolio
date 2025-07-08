@@ -3,8 +3,12 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
+
+const modelUrl = 'https://sdpjneouogwaatdu.public.blob.vercel-storage.com/rusty_metal_gear_wcliee1_mid-vgJK9ed2MkKJGHdaFFKlr5PN5bU8eM.glb';
+
 export function EnduranceModel(props) {
-  const { scene } = useGLTF('/rusty_metal_gear_wcliee1_mid.glb');
+  // const { scene } = useGLTF('/rusty_metal_gear_wcliee1_mid.glb');
+  const { scene } = useGLTF(modelUrl);
   const meshRef = useRef();
   
   // ใช้ useFrame เพื่อให้หมุนต่อเนื่องแบบพวงมาลัย
@@ -27,4 +31,6 @@ export function EnduranceModel(props) {
   );
 }
 
-useGLTF.preload('/rusty_metal_gear_wcliee1_mid.glb');
+// useGLTF.preload('/rusty_metal_gear_wcliee1_mid.glb');
+useGLTF.preload(modelUrl);
+
