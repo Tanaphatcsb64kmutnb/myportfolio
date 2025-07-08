@@ -399,7 +399,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   <Image
                     src={image}
                     alt={`${project.title} - Thumbnail ${index + 1}`}
-                    layout="fill"
+                    fill
                     objectFit="cover"
                   />
                 </button>
@@ -412,7 +412,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               <Image
                 src={project.detailImages[currentImageIndex]}
                 alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                layout="fill"
+                fill
                 objectFit="contain"
                 className="rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none"
                 priority // เพิ่ม priority เพื่อโหลดรูปหลักเร็วขึ้น

@@ -401,7 +401,7 @@ const ProjectsSection = () => {
                  {/* ปรับสี Card ให้เป็นธีมดำ */}
                  <div className={`group relative w-full h-full bg-gray-900 border border-gray-700/50 rounded-2xl overflow-hidden shadow-2xl hover:border-gray-500/80 transition-all duration-300 ${ index === activeIndex ? 'brightness-100 contrast-110' : 'brightness-110' }`}>
                     <div className="relative h-full w-full">
-                        <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" className="group-hover:scale-105 transition-transform duration-500"/>
+                        <Image src={project.image} alt={project.title} fill objectFit="cover" className="group-hover:scale-105 transition-transform duration-500"/>
                         <div className={`absolute inset-0 transition-all duration-300 ${ index === activeIndex ? 'bg-gradient-to-t from-black/10 via-transparent to-transparent group-hover:from-black/5' : 'bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/30' }`}></div>
                         <div className="absolute bottom-0 left-0 right-0 p-4">
                             <div className="flex justify-between items-start mb-2">
